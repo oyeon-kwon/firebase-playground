@@ -2,15 +2,6 @@ import { useState, useEffect } from "react";
 import Feed from "./components/Feed";
 import { postsDocSnap } from "../src/firebase.config";
 
-import {
-  getFirestore,
-  collection,
-  doc,
-  setDoc,
-  addDoc,
-  getDocs,
-} from "firebase/firestore";
-
 function App() {
   const [posts, setPosts] = useState([]);
 
