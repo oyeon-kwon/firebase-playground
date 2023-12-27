@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Feed from "./components/Feed";
+import Login from "./components/Login";
+import GoogleLogin from "./components/GoogleLogin";
 import { postsDocSnap } from "../src/firebase.config";
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
 
   return (
     <div>
+      <Login />
+      <GoogleLogin />
       <Feed posts={posts} setPosts={setPosts} />
     </div>
   );
