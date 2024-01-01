@@ -1,11 +1,7 @@
 import { useState } from "react";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { auth } from "../firebase.config";
 import GoogleLogin from "./GoogleLogin";
 import './login.css';
+// TODO import 
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -14,36 +10,11 @@ function Login() {
   const [user, setUser] = useState("")
 
   const requestSignUp = () => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        alert(`${user.email}님 가입을 축하합니다!`)
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-
-        console.error(errorCode, errorMessage)
-      });
+    // TODO 회원가입 하는 코드를 작성하세요.
   };
 
   const requestSignIn = () => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        setIsLogin(true)
-        console.log(user)
-        setUser(user.email)
-        
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-
-        console.error(errorCode, errorMessage)
-      });
+    // TODO 로그인 하는 코드를 작성하세요.
   };
 
   return (

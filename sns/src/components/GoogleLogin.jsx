@@ -1,7 +1,10 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth, googleProvider } from "../firebase.config";
+import './googleLogin.css'
 
-function GoogleLogin() {
+// eslint-disable-next-line react/prop-types
+function GoogleLogin({ setUser, setIsLogin }) {
+
   const requestGoogleLogin = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
@@ -11,7 +14,10 @@ function GoogleLogin() {
         // The signed-in user info.
         const user = result.user;
         // IdP data available using getAdditionalUserInfo(result)
-        // ...
+        
+        console.log(token)
+        setIsLogin(true)
+        setUser(user.email)
       })
       .catch((error) => {
         // Handle Errors here.
@@ -22,9 +28,11 @@ function GoogleLogin() {
         // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
+
+        console.error(errorCode, errorMessage, email, credential)
       });
   };
-  return <button onClick={requestGoogleLogin}>구글 로그인</button>;
+  return <button className="google-login-button" onClick={requestGoogleLogin}>Google 로그인</button>;
 }
 
 export default GoogleLogin;
