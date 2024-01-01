@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Feed from "./components/Feed";
 import Login from "./components/Login";
-import { postsDocSnap } from "../src/firebase.config";
+import { postsDocSnap } from "./firebase.config";
 
 function App() {
   const [posts, setPosts] = useState([]);

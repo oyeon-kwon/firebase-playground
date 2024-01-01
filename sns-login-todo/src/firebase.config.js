@@ -10,10 +10,8 @@ import {
   deleteDoc,
   updateDoc,
 } from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-import { getAuth } from "firebase/auth";
-import { GoogleAuthProvider } from "firebase/auth";
+
+// TODO 인증에 필요한 모듈을 import 하세요.
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -50,9 +48,4 @@ export const updatePost = async (id, content) => {
 // Delete
 export const deletePost = async (id) => await deleteDoc(doc(db, "posts", id));
 
-// Login
-// Initialize Firebase Authentication and get a reference to the service
-export const auth = getAuth(app);
-
-// Google Login
-export const googleProvider = new GoogleAuthProvider();
+// TODO 인증에 필요한 코드를 작성하세요.
